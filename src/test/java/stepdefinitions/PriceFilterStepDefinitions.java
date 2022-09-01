@@ -49,8 +49,8 @@ public class PriceFilterStepDefinitions {
         scenario.log("Search page opened.");
     }
 
-    @When("the user enters positive numbers in (.+) and (.+) fields")
-    public void userFillsMinAndMax(double minPrice, double maxPrice) {
+    @When("the user enters positive numbers in {double} and {double} fields")
+    public void userFillasMinAndMax(double minPrice, double maxPrice) {
         String minBtnId = properties.get("minBtnId");
         String maxBtnId = properties.get("maxBtnId");
 
@@ -75,7 +75,7 @@ public class PriceFilterStepDefinitions {
         scenario.log("Search results received");
     }
 
-    @Then("the price of the products should be between (.+) and (.+)")
+    @Then("the price of the products should be between {double} and {double}")
     public void validatePricesBetweenMinAndMax(double minPrice, double maxPrice) {
         String searchResultsId = properties.get("searchResultsId");
         String priceTagSelector = properties.get("priceTagSelector");
@@ -105,4 +105,5 @@ public class PriceFilterStepDefinitions {
     private static void closeWebDriver() {
         driver.close();
     }
+
 }

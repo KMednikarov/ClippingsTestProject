@@ -9,4 +9,4 @@ Feature: Filter by price - Min and Max fields
     Then the price of the products should be between <minPrice> and <maxPrice>
     Examples:
       | minPrice | maxPrice |
-      | 25       | 45       |
+      | 25.0     | 45.0     |
